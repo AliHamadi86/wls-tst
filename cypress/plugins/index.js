@@ -12,21 +12,22 @@
 // the project's config changing)
 
 //module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
-//}
-
+// `on` is used to hook into various events Cypress emits
+// `config` is the resolved Cypress config
+//
+//import wp from '@cypress/webpack-preprocessor';
 const wp = require('@cypress/webpack-preprocessor')
 module.exports = (on) => {
   const options = {
     webpackOptions: {
+      target: 'node',
       resolve: {
         extensions: [".ts", ".tsx", ".js"]
       },
       module: {
         rules: [
           {
-            test: /\.tsx?$/,
+            test: /\.ts?$/,
             loader: "ts-loader",
             options: { transpileOnly: true }
           }
