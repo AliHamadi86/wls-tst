@@ -4,6 +4,7 @@ export class Login {
     public static usernameTxtSelector: string = '#username';
     public static passwordTxtSelector: string = '#password';
     public static loginButtonSelector: string = '.login-btn';
+    public static errorMessageSelector: string = '.error-msg';
 
     public static clickSignInButton() {
         return cy.get(Login.signInButtonSelector).click();
@@ -19,6 +20,10 @@ export class Login {
 
     public static clickLoginButton() {
         return cy.get(Login.loginButtonSelector).click();
+    }
+
+    public static errorMessage() {
+        return cy.get(Login.errorMessageSelector).invoke('text');
     }
 
 }

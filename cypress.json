@@ -2,6 +2,8 @@
     "viewportWidth": 1500,
     "viewportHeight": 700,
     "env": {
-        "host": "http://www.google.com"
+        "host": "https://www.google.com",
+        "username": "username",
+        "password": "password"
     }
 }
